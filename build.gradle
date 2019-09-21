@@ -1,16 +1,30 @@
 plugins {
+    // spring-boot
+    id 'org.springframework.boot' version '2.1.0.RELEASE'
     id 'java'
 }
+
+apply plugin: 'java'
+// 应用依赖管理插件, 自动给插件追加版本号
+apply plugin: 'io.spring.dependency-management'
 
 group 'cn.thinxz'
 version '1.0-SNAPSHOT'
 
+// jar
+bootJar {
+    baseName = 'gradle-demo'
+    version = ''
+}
+
 sourceCompatibility = 1.8
 
 repositories {
-    mavenCentral()
+    mavenLocal()
+    maven { url 'http://maven.aliyun.com/nexus/content/groups/public/' }
 }
 
 dependencies {
-    testCompile group: 'junit', name: 'junit', version: '4.12'
+    // spring-web
+    compile("org.springframework.boot:spring-boot-starter-web")
 }
