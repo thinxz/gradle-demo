@@ -9,5 +9,6 @@
 *.file
 
 .idea/
-target/
 logs/
+
+build/
