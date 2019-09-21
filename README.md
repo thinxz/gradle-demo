@@ -3,7 +3,7 @@
 > gradle idea 项目搭建
 
 > 01 初始化项目
-
+```
 gradle-demo
 │  .gitignore
 │  build.gradle
@@ -19,7 +19,7 @@ gradle-demo
     └─test
         ├─java
         └─resources
-
+```
 > 02 命令
 
 gradle clean # 清理
