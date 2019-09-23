@@ -1,2 +1,10 @@
+// 多项目模块配置
 rootProject.name = 'gradle-demo'
+// 包含子项目
+include 'common', 'api'
 
+// 跟项目遍历所有子项目
+rootProject.children.each {
+    // 自定义构建文件名
+    println("pro name -> " + it.name)
+}

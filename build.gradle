@@ -1,30 +1,22 @@
-plugins {
-    // spring-boot
-    id 'org.springframework.boot' version '2.1.0.RELEASE'
-    id 'java'
+// 根项目构建脚本配置
+// 项目配置
+allprojects {
+    group = 'cn.thinxz'
+    version = '0.1.0-SNAPSHOT'
 }
 
-apply plugin: 'java'
-// 应用依赖管理插件, 自动给插件追加版本号
-apply plugin: 'io.spring.dependency-management'
+// 子项目配置
+subprojects() {
+    apply plugin: 'java'
 
-group 'cn.thinxz'
-version '1.0-SNAPSHOT'
+    sourceCompatibility = 1.8
 
-// jar
-bootJar {
-    baseName = 'gradle-demo'
-    version = ''
-}
+    repositories {
+        mavenCentral()
+    }
 
-sourceCompatibility = 1.8
-
-repositories {
-    mavenLocal()
-    maven { url 'http://maven.aliyun.com/nexus/content/groups/public/' }
-}
-
-dependencies {
-    // spring-web
-    compile("org.springframework.boot:spring-boot-starter-web")
+    repositories {
+        mavenLocal()
+        maven { url 'http://maven.aliyun.com/nexus/content/groups/public/' }
+    }
 }
